@@ -1,6 +1,6 @@
 # project
 
-> A Vue.js project
+> Hi ,everyone,this is my newProject
 
 ## Build Setup
 
