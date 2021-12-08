@@ -1,16 +1,16 @@
 <template>
-  <div class="hello">
-    <el-container>
-      <el-header>这里是标题栏</el-header>
+    <el-container style="min-height:100vh">
+      <el-header>Project</el-header>
       <el-container>
         <el-aside width="200px">这里是侧边栏</el-aside>
         <el-container>
-          <el-main>这里是主要内容</el-main>
-          <el-footer>这列底部广告</el-footer>
+          <el-main>
+          这里是主要内容        
+          </el-main>
+          <el-footer>这里是底部栏</el-footer>
         </el-container>
       </el-container>
     </el-container>
-  </div>
 </template>
 
 <script>
@@ -25,6 +25,12 @@ export default {
 </script>
 
 <style scoped>
+.hello{
+
+}
+.el-container{
+ 
+}
  .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
@@ -45,7 +51,6 @@ export default {
     text-align: center;
     line-height: 160px;
   }
-  
   body > .el-container {
     margin-bottom: 40px;
   }
