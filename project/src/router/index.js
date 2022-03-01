@@ -13,14 +13,9 @@ export default new Router({
       component: mainIndex
     },
     {
-     path:'/nihaoya',
-     name:'nihaoya',
+     path:'/testCom',
+     name:'testCom',
      component:newComponent
-    },
-    {
-      path:'/wohaoya',
-      name:'wohoaya',
-      component:newComponent
     }
   ]
 })
