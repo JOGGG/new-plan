@@ -7,7 +7,7 @@
           <el-main>
           这里是主要内容        
           </el-main>
-          <el-footer>这里是底部栏AA</el-footer>
+          <el-footer>这里是底部栏</el-footer>
         </el-container>
       </el-container>
     </el-container>
