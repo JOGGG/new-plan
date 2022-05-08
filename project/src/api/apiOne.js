@@ -1,6 +1,6 @@
 import service from "@/utils/request";
 export function sentOne(params) {
-    return request({
+    return service({
       url: '/about',
       method: 'get',
       params
