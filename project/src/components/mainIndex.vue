@@ -6,7 +6,7 @@
     <el-container>
       <el-header>Welcome to Project</el-header>
 
-      <el-main> 这里是主要内容 </el-main>
+      <el-main> 这里是主要内容 <button @click="sent">getMsg</button> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>
@@ -14,12 +14,23 @@
 
 <script>
 import sideMenu from "./sideMenu.vue";
+import {sentOne} from '../api/apiOne'
 export default {
   name: "mainIndex",
   data() {
     return {
       msg: "Welcome to App-project",
     };
+  },
+  methods:{
+    async sent(){
+      var res = await sentOne({})
+      if(res){
+        console.log(res)
+      }else{
+        console.error()
+      }
+    }
   },
   components: {
     sideMenu,
