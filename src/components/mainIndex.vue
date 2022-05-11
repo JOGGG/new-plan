@@ -6,7 +6,7 @@
     <el-container>
       <el-header>Welcome to Project</el-header>
 
-      <el-main> 这里是主要内容 <button @click="sent">getMsg</button> </el-main>
+      <el-main> 这里是主要内容{{data}}<button @click="sent">getMsg</button> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>
@@ -20,12 +20,15 @@ export default {
   data() {
     return {
       msg: "Welcome to App-project",
+      data:''
     };
   },
   methods:{
     async sent(){
       var res = await sentOne({})
-      if(res){
+      if(res.status == 200){
+      
+        this.data = res.data.data
         console.log(res)
       }else{
         console.error()
