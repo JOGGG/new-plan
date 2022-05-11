@@ -6,7 +6,7 @@
     <el-container>
       <el-header>Welcome to Project</el-header>
 
-      <el-main> 这里是主要内容{{data}}<button @click="sent">getMsg</button> </el-main>
+      <el-main> 这里是{{data}}<button @click="sent">getMsg</button> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       msg: "Welcome to App-project",
-      data:''
+      data:'data内容'
     };
   },
   methods:{
