@@ -6,7 +6,7 @@
     <el-container>
       <el-header>Welcome to Project</el-header>
 
-      <el-main> 这里是1A{{data}}<button @click="sent">getMsg</button> </el-main>
+      <el-main> 这里是{{data}}<button @click="sent">getMsg</button> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>
