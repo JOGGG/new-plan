@@ -1,7 +1,7 @@
 <template>
   <el-container style="min-height: 100vh">
     <el-aside width="200px">
-      <sideMenu />
+      <sideMenu/>
     </el-aside>
     <el-container>
       <el-header>Welcome to Project</el-header>

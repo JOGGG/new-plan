@@ -6,6 +6,7 @@ import newComponent from '@/components/newComponent'
 Vue.use(Router)
 
 export default new Router({
+  scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
       path: '/',
@@ -16,6 +17,11 @@ export default new Router({
      path:'/testCom',
      name:'testCom',
      component:newComponent
-    }
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/login/index'),
+      hidden: true
+    },
   ]
 })
