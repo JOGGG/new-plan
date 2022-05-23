@@ -38,14 +38,13 @@
 </template>
 
 <script>
-import { sendLogin } from "@/api/login";
 import { mapState } from "vuex";
 
 export default {
   mounted() {
     this.getCode();
   },
-   computed: {
+  computed: {
     ...mapState(["app"]),
     getVerCode() {
       let newData = this.verCodeShowA + "+" + this.verCodeShowB + "=?";
@@ -90,27 +89,15 @@ export default {
     goLogin() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.$store.commit('SET_loading',true)
           //validate pass
+          this.$store.commit("SET_loading", true);
+        
           let data = Object.assign({}, this.loginForm);
-          this.$store.dispatch("sendLogin", data);
+          this.$store.dispatch("sendLogin", {data:data,_this:this});
         } else {
           // this.$message.error("请再次确认输入信息");
         }
       });
-    },
-    //send LoginData
-    async sendLogin(data) {
-      var res = await sendLogin(data);
-      if (res.data.success) {
-        //login success
-        this.$refs.loginForm.resetFields();
-        console.log(this.$store);
-        this.$message.success("登录成功");
-      } else {
-        console.log(res);
-        this.$message.warning("登录失败");
-      }
     },
   },
 };
