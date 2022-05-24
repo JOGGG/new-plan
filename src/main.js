@@ -9,7 +9,7 @@ import store from './store'
 
 
 Vue.config.productionTip = false
-
+Vue.prototype.BASE_URL = process.env.BASE_API
 Vue.use(ElementUI);
 
 /* eslint-disable no-new */

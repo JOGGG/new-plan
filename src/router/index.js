@@ -4,10 +4,10 @@ import mainIndex from '@/components/mainIndex'
 import newComponent from '@/components/newComponent'
 
 Vue.use(Router)
-
-export default new Router({
+export const router = new Router({
   scrollBehavior: () => ({ y: 0 }),
-  routes: [
+
+   routes:[
     {
       path: '/',
       name: 'mainIndex',
@@ -24,4 +24,17 @@ export default new Router({
       hidden: true
     },
   ]
+}) 
+router.beforeEach((to,from,next)=>{
+  //check token
+  if(to.path !='/login'){
+    if(window.sessionStorage.token){
+      next()
+    }else{
+      next({ path: '/login' })
+    }
+  }
+  next()
 })
+
+export default router
