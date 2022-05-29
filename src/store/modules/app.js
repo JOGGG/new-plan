@@ -23,7 +23,9 @@ const app = {
             commit('SET_loading', false) //loading off
             data._this.$message.success("登录成功");
             window.sessionStorage.setItem('token',res.data.data.token);
+            console.log(data._this.BASE_URL)
             window.location.href = data._this.BASE_URL
+          
           }
           resolve(res)
         }).catch(error => {

@@ -1,6 +1,7 @@
 <template>
   <div id="app"  v-loading="app.loading">
-    <router-view/>
+  <router-view name="top"></router-view>
+  <router-view></router-view>
   </div>
 </template>
 

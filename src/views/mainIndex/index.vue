@@ -1,5 +1,6 @@
 <template>
   <el-container style="min-height: 100vh">
+  <router-view name="top"></router-view>
     <el-aside width="200px">
       <sideMenu/>
     </el-aside>
@@ -8,13 +9,14 @@
 
       <el-main> 这里是{{data}}<button @click="sent">getMsg</button> </el-main>
       <el-footer>这里是底部栏</el-footer>
+      <router-view></router-view>
     </el-container>
   </el-container>
 </template>
 
 <script>
-import sideMenu from "./sideMenu.vue";
-import {sentOne} from '../api/apiOne'
+import sideMenu from "@/components/sideMenu.vue";
+import {sentOne} from '@/api/apiOne'
 export default {
   name: "mainIndex",
   data() {

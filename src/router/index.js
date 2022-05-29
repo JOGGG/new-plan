@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import mainIndex from '@/components/mainIndex'
 import newComponent from '@/components/newComponent'
+import mainIndex from '@/views/mainIndex/index'
+import top from '@/components/topNav'
 
 Vue.use(Router)
 export const router = new Router({
@@ -10,8 +11,23 @@ export const router = new Router({
    routes:[
     {
       path: '/',
-      name: 'mainIndex',
-      component: mainIndex
+      component: mainIndex,
+      hidden: true,
+    },
+    {
+      path: '/2',
+      component: mainIndex,
+      hidden: true,
+      children:[
+        {
+          path:"/2/2",
+          name:'你猜猜',
+          components:{
+            default:()=>import('@/views/login/index'),
+            top,
+          }
+        }
+      ]
     },
     {
      path:'/testCom',
