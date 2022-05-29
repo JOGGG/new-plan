@@ -1,41 +1,38 @@
 <template>
   <el-container style="min-height: 100vh">
-  <router-view name="top"></router-view>
     <el-aside width="200px">
-      <sideMenu/>
+      <sideMenu />
     </el-aside>
     <el-container>
       <el-header>Welcome to Project</el-header>
 
-      <el-main> 这里是{{data}}<button @click="sent">getMsg</button> </el-main>
+      <el-main> <router-view></router-view> </el-main>
       <el-footer>这里是底部栏</el-footer>
-      <router-view></router-view>
     </el-container>
   </el-container>
 </template>
 
 <script>
 import sideMenu from "@/components/sideMenu.vue";
-import {sentOne} from '@/api/apiOne'
+import { sentOne } from "@/api/apiOne";
 export default {
   name: "mainIndex",
   data() {
     return {
       msg: "Welcome to App-project",
-      data:'data内容'
+      data: "data内容",
     };
   },
-  methods:{
-    async sent(){
-      var res = await sentOne({})
-      if(res.status == 200){
-      
-        this.data = res.data.data
-        console.log(res)
-      }else{
-        console.error()
+  methods: {
+    async sent() {
+      var res = await sentOne({});
+      if (res.status == 200) {
+        this.data = res.data.data;
+        console.log(res);
+      } else {
+        console.error();
       }
-    }
+    },
   },
   components: {
     sideMenu,
@@ -44,7 +41,6 @@ export default {
 </script>
 
 <style scoped>
-
 .el-header,
 .el-footer {
   background-color: #b3c0d1;

@@ -24,6 +24,7 @@ const app = {
             data._this.$message.success("登录成功");
             window.sessionStorage.setItem('token',res.data.data.token);
             console.log(data._this.BASE_URL)
+            debugger
             window.location.href = data._this.BASE_URL
           
           }

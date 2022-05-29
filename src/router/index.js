@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import newComponent from '@/components/newComponent'
 import mainIndex from '@/views/mainIndex/index'
 import top from '@/components/topNav'
 
@@ -15,24 +14,18 @@ export const router = new Router({
       hidden: true,
     },
     {
-      path: '/2',
+      path: '/table',
       component: mainIndex,
       hidden: true,
       children:[
         {
-          path:"/2/2",
-          name:'你猜猜',
+          path:"/table/index",
+          name:'tableIndex',
           components:{
-            default:()=>import('@/views/login/index'),
-            top,
+            default:()=>import('@/views/table/index'),
           }
         }
       ]
-    },
-    {
-     path:'/testCom',
-     name:'testCom',
-     component:newComponent
     },
     {
       path: '/login',
