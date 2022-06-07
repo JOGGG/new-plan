@@ -1,6 +1,6 @@
 <template>
   <div>
-    this is table
+   this is table/index
   </div>
 </template>
 

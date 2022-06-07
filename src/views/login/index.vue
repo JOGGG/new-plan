@@ -22,7 +22,7 @@
             ></el-input>
           </el-form-item>
           <el-form-item label="验证码" prop="verCode">
-            <el-input v-model="loginForm.verCode">
+            <el-input v-model="loginForm.verCode" @keyup.enter.native="goLogin()">
               <template slot="append">
                 <div class="verification-code" @click="getCode()">
                   {{ getVerCode }}
