@@ -4,7 +4,7 @@
       <sideMenu />
     </el-aside>
     <el-container>
-      <el-header>Welcome to Project</el-header>
+      <el-header>Welcome to Project,{{userData.userName}}</el-header>
 
       <el-main> <router-view></router-view> </el-main>
       <el-footer>这里是底部栏</el-footer>
@@ -15,6 +15,7 @@
 <script>
 import sideMenu from "@/components/sideMenu.vue";
 import { sentOne } from "@/api/apiOne";
+import { mapState } from 'vuex';
 export default {
   name: "mainIndex",
   data() {
@@ -23,6 +24,18 @@ export default {
       data: "data内容",
     };
   },
+  // computed: {
+  //   userData(){
+  //     console.log(this.$store.state.app.userData)
+  //     return this.$store.state.app.userData
+  //   }
+  // },
+   computed: mapState({
+    // 箭头函数可使代码更简练
+    userData: state => state.app.userData,
+
+   
+  }),
   methods: {
     async sent() {
       var res = await sentOne({});

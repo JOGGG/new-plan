@@ -38,14 +38,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 
 export default {
   mounted() {
     this.getCode();
   },
   computed: {
-    ...mapState(["app"]),
     getVerCode() {
       let newData = this.verCodeShowA + "+" + this.verCodeShowB + "=?";
       return newData;

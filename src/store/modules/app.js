@@ -4,7 +4,8 @@ import {
 
 const app = {
   state: {
-    loading: false
+    loading: false,
+    userData:JSON.parse(window.sessionStorage.getItem('userData'))
   },
   mutations: {
     SET_loading: (state, setting) => {
@@ -23,9 +24,9 @@ const app = {
             commit('SET_loading', false) //loading off
             data._this.$message.success("登录成功");
             window.sessionStorage.setItem('token',res.data.data.token);
+            window.sessionStorage.setItem('userData',JSON.stringify(res.data.data));
             console.log(data._this.BASE_URL)
-            window.location.href = data._this.BASE_URL
-          
+            window.location.href = data._this.BASE_URL 
           }
           resolve(res)
         }).catch(error => {
