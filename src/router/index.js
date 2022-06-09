@@ -34,6 +34,7 @@ export const router = new Router({
     },
   ]
 }) 
+//Navigation Guards
 router.beforeEach((to,from,next)=>{
   //check token
   if(to.path !='/login'){

@@ -22,7 +22,7 @@ const app = {
           console.error(res.data)
           if (res.data.success) {
             commit('SET_loading', false) //loading off
-            data._this.$message.success("登录成功");
+            data._this.msgS("登录成功");
             window.sessionStorage.setItem('token',res.data.data.token);
             window.sessionStorage.setItem('userData',JSON.stringify(res.data.data));
             console.log(data._this.BASE_URL)
