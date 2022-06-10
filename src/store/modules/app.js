@@ -31,6 +31,7 @@ const app = {
           resolve(res)
         }).catch(error => {
           //any type error(timeout...)
+          data._this.getCode() //get new verifyCode
           data._this.$message.error("登录失败，请检查网络");
           commit('SET_loading', false)
           reject(error)

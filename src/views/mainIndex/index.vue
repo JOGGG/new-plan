@@ -1,6 +1,6 @@
 <template>
   <el-container style="min-height: 100vh">
-    <el-aside width="200px">
+    <el-aside  style="width:unset">
       <sideMenu />
     </el-aside>
     <el-container>
@@ -15,7 +15,6 @@
 <script>
 import sideMenu from "@/components/sideMenu.vue";
 import { sentOne } from "@/api/apiOne";
-import { mapState } from "vuex";
 export default {
   name: "mainIndex",
   data() {
@@ -25,12 +24,6 @@ export default {
       nickName:null,
     };
   },
-  // computed: {
-  //   userData(){
-  //     console.log(this.$store.state.app.userData)
-  //     return this.$store.state.app.userData
-  //   }
-  // },
   mounted() {
     let userData = sessionStorage.getItem('userData')
     if(userData){

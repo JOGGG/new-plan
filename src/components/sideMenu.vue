@@ -3,6 +3,7 @@
           default-active="2"
           class="el-menu-vertical-demo"
           :unique-opened="true"
+          :collapse="isCollapse"
           router
         >
           <el-submenu index="1">
@@ -31,7 +32,7 @@
             <i class="el-icon-document"></i>
             <span slot="title">导航三</span>
           </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item  @click="isCollapse = !isCollapse">
             <i class="el-icon-setting"></i>
             <span slot="title">导航四</span>
           </el-menu-item>
@@ -66,11 +67,15 @@
 export default {
   data() {
     return {
+      isCollapse:false
     };
   },
 };
 </script>
 
 <style scoped>
-
+ .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
 </style>
