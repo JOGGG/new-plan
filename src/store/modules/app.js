@@ -11,7 +11,7 @@ const app = {
     SET_loading: (state, setting) => {
       state.loading = setting
       console.log('s-loading=>', setting)
-    }
+    },
   },
   actions: {
     sendLogin({
@@ -19,7 +19,6 @@ const app = {
     }, data) {
       return new Promise((resolve, reject) => {
         sendLogin(data.data).then(res => {
-          console.error(res.data)
           if (res.data.success) {
             commit('SET_loading', false) //loading off
             data._this.msgS("登录成功");
@@ -36,8 +35,6 @@ const app = {
           commit('SET_loading', false)
           reject(error)
         })
-
-
       })
     },
   }

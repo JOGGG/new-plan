@@ -1,11 +1,12 @@
 <template>
   <el-container style="min-height: 100vh">
-    <el-aside  style="width:unset">
+    <el-aside style="width: unset">
       <sideMenu />
     </el-aside>
     <el-container>
-      <el-header>Welcome to Project{{nickName}}</el-header>
-
+      <el-header>
+        <router-view name="top"></router-view>
+      </el-header>
       <el-main> <router-view></router-view> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
@@ -20,17 +21,11 @@ export default {
   data() {
     return {
       msg: "Welcome to App-project",
-      data: "data内容",
-      nickName:null,
+      data: "data content",
     };
   },
   mounted() {
-    let userData = sessionStorage.getItem('userData')
-    if(userData){
-      this.nickName =','+ JSON.parse(userData).userName
-    }else{
-      this.msgE('未获取到用户信息')
-    }
+   
   },
   methods: {
     async sent() {
@@ -86,4 +81,5 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
+
 </style>

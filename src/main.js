@@ -6,8 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store'
-import { Message } from 'element-ui';
-
+import './assets/css/global.css'
 
 Vue.config.productionTip = false
 Vue.prototype.BASE_URL = process.env.BASE_API
@@ -34,6 +33,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App, },
+  components: { App },
   template: '<App/>'
 })

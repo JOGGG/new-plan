@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import mainIndex from '@/views/mainIndex/index'
-import top from '@/components/topNav'
+import TopNav from '@/components/topNav'
 
 Vue.use(Router)
 export const router = new Router({
@@ -10,12 +10,14 @@ export const router = new Router({
    routes:[
     {
       path: '/',
-      component: mainIndex,
+      component:mainIndex,
+      redirect:'/table/index',
       hidden: true,
     },
     {
       path: '/table',
-      component: mainIndex,
+      component:mainIndex,
+      redirect:'/table/index',
       hidden: true,
       children:[
         {
@@ -23,6 +25,7 @@ export const router = new Router({
           name:'tableIndex',
           components:{
             default:()=>import('@/views/table/index'),
+            top:TopNav
           }
         }
       ]
