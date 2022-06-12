@@ -6,10 +6,10 @@
     :collapse="isCollapse"
     router
   >
-    <el-menu-item :class="{'collapseItem':isCollapse}"  @click="isCollapse = !isCollapse">
+    <el-menu-item :class="{'collapseItem':isCollapse}" class="collapseItemAll"  @click="isCollapse = !isCollapse">
        <i class="el-icon-arrow-right" style="color:white" v-show="isCollapse"></i>
       <div class="collBtn" v-show="!isCollapse">
-        收起
+          <i class="el-icon-arrow-left" style="color:white" ></i>收起
       </div>
     </el-menu-item>
     <el-menu-item index="/table/index">
@@ -106,14 +106,16 @@ export default {
   width: 200px;
   min-height: 400px;
 }
+.collapseItemAll{
+  padding: 0 !important;
+}
 .collBtn{
   display: inline-block;
   color: #ffffff;
-  height: 40px;
+  height:100%;
   width: 100%;
-  line-height: 40px;
-  border-radius: 8px;
   background-color: #409eff;
+  transform:translateY(-1px)
 }
 .collBtn:hover{
   background-color: #b3d8ff;

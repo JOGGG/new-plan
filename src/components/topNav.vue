@@ -1,16 +1,18 @@
 <template>
-  <div class="headNav">
-    <el-avatar icon="el-icon-user-solid"> </el-avatar>
-    <el-dropdown class="menuDrop" @command="handleCommand">
-      <span class="el-dropdown-link" style="color:black">
-        {{ nickName }}<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="setting">系统设置</el-dropdown-item>
-        <el-dropdown-item command="logout">退出登录</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-  </div>
+    <div class="headNav">
+      <div class="mainTitle">{{mainTitle}}</div>
+      <el-avatar icon="el-icon-user-solid"> </el-avatar>
+      <el-dropdown class="menuDrop" @command="handleCommand">
+        <span class="el-dropdown-link" style="color: black">
+          {{ nickName }}<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="user">个人中心</el-dropdown-item>
+          <el-dropdown-item command="setting">系统设置</el-dropdown-item>
+          <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
 </template>
 
 <script>
@@ -19,6 +21,7 @@ export default {
   data() {
     return {
       nickName: null,
+      mainTitle:'你好，欢迎进入Project'
     };
   },
   mounted() {
@@ -33,13 +36,16 @@ export default {
     handleCommand(command) {
       eval(`this.${command}()`);
     },
+    user() {
+      this.msgI("user");
+    },
     setting() {
       this.msgI("setting");
     },
     logout() {
-      window.sessionStorage.clear()
-      this.$router.push('/login')
-      this.msgS('退出登录')
+      window.sessionStorage.clear();
+      this.$router.push("/login");
+      this.msgS("退出登录");
     },
   },
 };
@@ -47,10 +53,10 @@ export default {
 
 <style scoped>
 .headNav {
+  position: relative;
   display: flex;
   justify-content: end;
   align-items: center;
-  cursor: pointer;
 }
 .el-header {
   background-color: #b3c0d1;
@@ -60,5 +66,14 @@ export default {
 }
 .menuDrop {
   margin-left: 10px;
+  cursor: pointer;
+}
+
+.mainTitle{
+  position: absolute;
+  font-size: 24px;
+  color: black;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
