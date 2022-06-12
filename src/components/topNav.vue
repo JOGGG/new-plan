@@ -2,7 +2,7 @@
   <div class="headNav">
     <el-avatar icon="el-icon-user-solid"> </el-avatar>
     <el-dropdown class="menuDrop" @command="handleCommand">
-      <span class="el-dropdown-link">
+      <span class="el-dropdown-link" style="color:black">
         {{ nickName }}<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">

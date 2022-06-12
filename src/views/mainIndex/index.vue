@@ -81,5 +81,7 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
-
+.el-aside::-webkit-scrollbar-button{
+   display: none;
+    }
 </style>
