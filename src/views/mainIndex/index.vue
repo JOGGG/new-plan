@@ -4,10 +4,10 @@
       <sideMenu />
     </el-aside>
     <el-container>
-      <el-header>
+      <el-header style="height:56px">
         <router-view name="top"></router-view>
       </el-header>
-      <el-main> <router-view></router-view> </el-main>
+      <el-main style="padding:unset"> <router-view></router-view> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>

@@ -5,7 +5,7 @@ import {
 const app = {
   state: {
     loading: false,
-    userData:JSON.parse(window.sessionStorage.getItem('userData'))
+    userData:window.sessionStorage.getItem('userData')
   },
   mutations: {
     SET_loading: (state, setting) => {
