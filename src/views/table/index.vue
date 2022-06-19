@@ -1,6 +1,8 @@
 <template>
   <div class="comMain">
-    <div id="container"></div>
+    <div id="container">
+      <div class="mapBtn" @click="pickLocal()">坐标拾取</div>
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,9 @@ import { mapState } from "vuex";
 import AMapLoader from "@amap/amap-jsapi-loader";
 export default {
   mounted() {
-    this.initMap();
+    this.$nextTick(() => {
+      this.initMap();
+    });
   },
   data() {
     return {
@@ -41,8 +45,6 @@ export default {
   methods: {
     initMap() {
       const _this = this;
-      // 坐标拾取
-      // https://lbs.amap.com/tools/picker
       AMapLoader.load({
         key: this.mapKey,
         version: "2.0",
@@ -60,10 +62,32 @@ export default {
           console.log(e);
         });
     },
+    //坐标拾取
+    pickLocal() {
+      window.open('https://lbs.amap.com/tools/picker', "_blank");
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.mapBtn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 999;
+  line-height: 1;
+  background-color: #ecf5ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #409eff;
+  border: 1px #b3d8ff solid;
+  cursor: pointer;
+  &:hover {
+    color: #ffffff;
+    background-color: #409eff;
+    border-color: #409eff;
+  }
+}
 </style>
 
