@@ -5,12 +5,16 @@ import {
 const app = {
   state: {
     loading: false,
-    userData:window.sessionStorage.getItem('userData')
+    userData:window.sessionStorage.getItem('userData')||''
   },
   mutations: {
     SET_loading: (state, setting) => {
       state.loading = setting
       console.log('s-loading=>', setting)
+    },
+    SET_userData: (state, setting) => {
+      state.userData = setting
+      console.log('s-userData=>', setting)
     },
   },
   actions: {
@@ -21,10 +25,10 @@ const app = {
         sendLogin(data.data).then(res => {
           if (res.data.success) {
             commit('SET_loading', false) //loading off
+            commit('SET_userData', JSON.stringify(res.data.data)) //loading off
             data._this.msgS("登录成功");
             window.sessionStorage.setItem('token',res.data.data.token);
             window.sessionStorage.setItem('userData',JSON.stringify(res.data.data));
-            console.log(data._this.BASE_URL)
             window.location.href = data._this.BASE_URL 
           }
           resolve(res)

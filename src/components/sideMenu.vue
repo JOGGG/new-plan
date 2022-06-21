@@ -27,12 +27,21 @@
     <el-submenu index="1">
       <template slot="title">
         <i class="el-icon-location"></i>
-        <span>用户信息</span>
+        <span>相关信息</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="1-1">个人中心</el-menu-item>
-        <el-menu-item index="1-2">系统设置</el-menu-item>
-        <el-menu-item index="1-3">帮助</el-menu-item>
+        <el-menu-item index="1-1">
+          <template slot="title">
+            <i class="el-icon-user-solid"></i>
+            <span>个人信息</span>
+          </template></el-menu-item
+        >
+        <el-menu-item index="1-2">
+          <template slot="title">
+            <i class="el-icon-s-tools"></i>
+            <span>系统设置</span>
+          </template></el-menu-item
+        >
       </el-menu-item-group>
     </el-submenu>
   </el-menu>
@@ -51,6 +60,8 @@ export default {
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
+}
+.el-menu-vertical-demo {
   min-height: 100vh;
 }
 .el-aside ul {
