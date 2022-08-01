@@ -10,11 +10,11 @@ const app = {
   mutations: {
     SET_loading: (state, setting) => {
       state.loading = setting
-      console.log('s-loading=>', setting)
+      // console.log('s-loading=>', setting)
     },
     SET_userData: (state, setting) => {
       state.userData = setting
-      console.log('s-userData=>', setting)
+      // console.log('s-userData=>', setting)
     },
   },
   actions: {
