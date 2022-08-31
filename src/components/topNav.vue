@@ -28,7 +28,7 @@ export default {
     return {
       nickName: null,
       nowTime: new Date().toJSON().slice(0, 9) +'.'+ new Date().toTimeString().slice(0, 9),
-      mainTitle: "你好，欢迎进入Project",
+      mainTitle: "你好，欢迎进入清清家庭",
     };
   },
   mounted() {
