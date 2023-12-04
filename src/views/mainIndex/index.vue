@@ -4,10 +4,10 @@
       <sideMenu />
     </el-aside>
     <el-container>
-      <el-header style="height:56px">
+      <el-header style="height: 56px">
         <router-view name="top"></router-view>
       </el-header>
-      <el-main style="padding:unset"> <router-view></router-view> </el-main>
+      <el-main style="padding: unset"> <router-view></router-view> </el-main>
       <el-footer>这里是底部栏</el-footer>
     </el-container>
   </el-container>
@@ -24,9 +24,7 @@ export default {
       data: "data content",
     };
   },
-  mounted() {
-   
-  },
+  mounted() {},
   methods: {
     async sent() {
       var res = await sentOne({});
@@ -81,7 +79,7 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
-.el-aside::-webkit-scrollbar-button{
-   display: none;
-    }
+.el-aside::-webkit-scrollbar-button {
+  display: none;
+}
 </style>

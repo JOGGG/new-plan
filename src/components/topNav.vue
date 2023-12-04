@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       nickName: null,
-      nowTime: new Date().toJSON().slice(0, 9) +'.'+ new Date().toTimeString().slice(0, 9),
+      nowTime: new Date().toTimeString(),
       mainTitle: "你好，欢迎进入清清家庭",
     };
   },

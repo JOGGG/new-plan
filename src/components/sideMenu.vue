@@ -36,7 +36,7 @@
             <span>个人信息</span>
           </template></el-menu-item
         >
-        <el-menu-item index="1-2">
+        <el-menu-item index="/setting/index">
           <template slot="title">
             <i class="el-icon-s-tools"></i>
             <span>系统设置</span>

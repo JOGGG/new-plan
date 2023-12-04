@@ -5,7 +5,7 @@ import {
 const app = {
   state: {
     loading: false,
-    userData:window.sessionStorage.getItem('userData')||''
+    userData: window.sessionStorage.getItem('userData') || ''
   },
   mutations: {
     SET_loading: (state, setting) => {
@@ -27,9 +27,9 @@ const app = {
             commit('SET_loading', false) //loading off
             commit('SET_userData', JSON.stringify(res.data.data)) //loading off
             data._this.msgS("登录成功");
-            window.sessionStorage.setItem('token',res.data.data.token);
-            window.sessionStorage.setItem('userData',JSON.stringify(res.data.data));
-            window.location.href = data._this.BASE_URL 
+            window.sessionStorage.setItem('token', res.data.data.token);
+            window.sessionStorage.setItem('userData', JSON.stringify(res.data.data));
+            window.location.href = data._this.BASE_URL
           }
           resolve(res)
         }).catch(error => {

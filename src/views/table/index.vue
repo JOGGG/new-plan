@@ -63,8 +63,6 @@ export default {
             // 图标的取图地址
             image: require("@/assets/icon/heartIcon.png"),
             imageOffset: new AMap.Pixel(0, 0),
-
-            // 图标所用图片大小
           });
           var markerOne = new AMap.Marker({
             position: new AMap.LngLat(113.930478, 22.533191),
@@ -89,18 +87,18 @@ export default {
             style: {
               "background-color": "#29b6f6",
               "border-color": "#e1f5fe",
-              "color":'#FFFFFF',
+              color: "#FFFFFF",
               "font-size": "12px",
-              "height":'20px',
-              "line-height":'20px'
+              height: "20px",
+              "line-height": "20px",
             },
           });
           text.setMap(this.map);
           function computeDis() {
-            var p1 = marker.getPosition();
-            var p2 = markerOne.getPosition();
-            var textPos = p1.divideBy(2).add(p2.divideBy(2));
-            var distance = Math.round(p1.distance(p2));
+            var p1 = marker.getPosition(),
+              p2 = markerOne.getPosition();
+            var textPos = p1.divideBy(2).add(p2.divideBy(2)),
+              distance = Math.round(p1.distance(p2));
             var path = [p1, p2];
             line.setPath(path);
             text.setText("两点相距" + distance + "米");

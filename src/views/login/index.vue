@@ -3,31 +3,21 @@
     <div class="mainForm">
       <div class="formLeft">欢迎登录蛋糕铺子</div>
       <div class="formRight">
-        <el-form
-          :label-position="labelPosition"
-          label-width="80px"
-          :rules="rules"
-          hide-required-asterisk
-          :model="loginForm"
-          ref="loginForm"
-        >
+        <el-form :label-position="labelPosition" label-width="80px" :rules="rules" hide-required-asterisk
+          :model="loginForm" ref="loginForm">
           <el-form-item label="账号" prop="account">
             <el-input v-model="loginForm.account"></el-input>
           </el-form-item>
           <el-form-item label="密码" prop="password">
-            <el-input
-              placeholder="请输入密码"
-              v-model="loginForm.password"
-              show-password
-            ></el-input>
+            <el-input placeholder="请输入密码" v-model="loginForm.password" show-password></el-input>
           </el-form-item>
           <el-form-item label="验证码" prop="verCode">
             <el-input v-model="loginForm.verCode" @keyup.enter.native="goLogin()">
               <template slot="append">
                 <div class="verification-code" @click="getCode()">
                   {{ getVerCode }}
-                </div></template
-              >
+                </div>
+              </template>
             </el-input>
           </el-form-item>
         </el-form>
@@ -89,9 +79,9 @@ export default {
         if (valid) {
           //validate pass
           this.$store.commit("SET_loading", true);
-        
+
           let data = Object.assign({}, this.loginForm);
-          this.$store.dispatch("sendLogin", {data:data,_this:this});
+          this.$store.dispatch("sendLogin", { data: data, _this: this });
         } else {
           // this.$message.error("请再次确认输入信息");
         }
@@ -104,14 +94,17 @@ export default {
 <style lang="scss" scoped>
 $fl: flex;
 $tblue: #409eff;
-/deep/ .el-form-item__label {
+
+::v-deep .el-form-item__label {
   font-size: 24px;
   color: #40485b;
 }
+
 .main {
   height: 100vh;
   overflow: hidden;
 }
+
 .verification-code {
   background: #ccc;
   padding: 0 10px;
@@ -123,6 +116,7 @@ $tblue: #409eff;
   font-size: 18px;
   cursor: pointer;
 }
+
 .mainForm {
   width: 50vw;
   display: $fl;
@@ -133,36 +127,41 @@ $tblue: #409eff;
   left: 50%;
   transform: translate(-50%, -50%);
   background-size: 400%;
-  background-image: linear-gradient(
-    45deg,
-    #b721ff 0%,
-    #1d8fe1 48%,
-    #acb6e5,
-    #86fde8
-  );
+  background-image: linear-gradient(45deg,
+      #b721ff 0%,
+      #1d8fe1 48%,
+      #acb6e5,
+      #86fde8);
   animation: process 20s infinite;
+
   @keyframes process {
     0% {
       background-position: 0% 0%;
     }
+
     50% {
       background-position: 100% 100%;
     }
+
     100% {
       background-position: 0% 0%;
     }
   }
+
   .formLeft {
     width: 60%;
     text-align: center;
     margin-top: 40px;
     color: #ffb6c1;
     font-size: 36px;
+    white-space: nowrap;
   }
+
   .formRight {
     padding: 20px;
     flex: 1;
     background-color: #ffffff;
+
     .loginBtn {
       border-radius: 8px;
       padding: 15px 40px;
@@ -170,9 +169,11 @@ $tblue: #409eff;
       background-color: $tblue;
       color: #ffffff;
       cursor: pointer;
+
       &:hover {
         background-color: #1e90ff;
       }
+
       &:active {
         background-color: #a0cfff;
       }
